@@ -29,7 +29,7 @@ class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsStat
   handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    fetch('http://localhost:3333/api/news', {
+    fetch('http://localhost:80/api/news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
