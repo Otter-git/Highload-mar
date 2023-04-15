@@ -4,15 +4,17 @@ import React, { ChangeEvent } from 'react';
 /* eslint-disable-next-line */
 export interface CreateNewsProps {}
 export interface CreateNewsState {
+  author: string;
   title: string,
   description: string,
   createdAt: number
 }
 
-class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsState>>{
-  constructor(props: CreateNewsProps) {
+class CreateNews extends React.Component< CreateNewsProps, Partial<CreateNewsState>> 
+{  constructor(props: CreateNewsProps) {
     super(props);
     this.state = {
+      author: '',
       title: '',
       description: '',
       createdAt: Date.now()
@@ -36,8 +38,8 @@ class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsStat
       },
       body: JSON.stringify(this.state),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         alert(this.state.title + ' успешно создана!');
         this.setState({
           title: '',
@@ -54,6 +56,18 @@ class CreateNews extends React.Component<CreateNewsProps, Partial<CreateNewsStat
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Создание новости</h1>
+        <div>
+          <label>
+            <h4>Автор</h4>
+            <input
+              required
+              name="author"
+              type="text"
+              value={this.state.author}
+              onChange={this.handleChange}
+            />
+          </label>
+        </div>
         <div>
           <label>
             <h4>Заголовок</h4>

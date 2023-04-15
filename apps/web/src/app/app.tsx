@@ -4,6 +4,7 @@ import NxWelcome from './nx-welcome';
 import { Route, Link } from 'react-router-dom';
 import News from './news/news';
 import CreateNews from './create-news/create-news';
+import Main from './main/main';
 
 export function App() {
   return (
@@ -31,7 +32,7 @@ export function App() {
         path="/"
         exact
         render={() => (
-          <h1>Главная страница</h1>
+          <Main />
         )}
       />
       <Route
