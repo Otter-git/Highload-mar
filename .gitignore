@@ -33,6 +33,8 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+Test Plan.jmx
+jmeter.log
 
 # System Files
 .DS_Store
