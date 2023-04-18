@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { NewsModule } from './news/news.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ChatService } from './chat/chat.service';
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import { join } from 'path';
     NewsModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ChatService],
 })
 export class AppModule {}

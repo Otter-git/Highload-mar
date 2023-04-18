@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import News from './news/news';
 import CreateNews from './create-news/create-news';
 import Main from './main/main';
+import Chat from './chat/chat';
 
 export function App() {
   return (
@@ -21,6 +22,9 @@ export function App() {
             <Link to="/">Главная</Link>
           </li>
           <li>
+            <Link to="/chat">Чат</Link>
+          </li>
+          <li>
             <Link to="/news">Новости</Link>
           </li>
           <li>
@@ -33,6 +37,13 @@ export function App() {
         exact
         render={() => (
           <Main />
+        )}
+      />
+      <Route
+        path="/chat"
+        exact
+        render={() => (
+          <Chat />
         )}
       />
       <Route
